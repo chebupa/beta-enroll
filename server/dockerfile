@@ -1,0 +1,19 @@
+FROM node:21
+
+WORKDIR /usr/src/app
+
+# install app dependencies
+COPY package*.json ./
+RUN npm install
+
+# RUN ls
+RUN npm install prisma --save-dev
+RUN npx prisma
+RUN npm install @prisma/client
+RUN npx prisma migrate dev --name init
+
+
+# bundle app source
+COPY . .
+
+CMD [ "npm", "start" ]

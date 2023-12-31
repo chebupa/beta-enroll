@@ -1,0 +1,130 @@
+$inputFontSize: 1rem;
+$defaultTransition: all 0.2s;
+$defaultScale: 1.03;
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  h1 {
+    margin-inline: 2.5rem;
+
+    font-size: xx-large;
+  }
+   
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    width: 85%;
+    max-width: 30rem;
+
+    .header {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    
+      text-align: center;
+      font-weight: 700;
+    }
+
+    label {
+      width: 100%;
+
+      p {
+        margin-bottom: 0.5rem;
+        margin-left: 0.25rem;
+
+        text-align: left;
+        font-size: 1.25rem;
+      }
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+    
+        padding: 1rem;
+    
+        outline: none;
+        border: 0.1rem solid white;
+        border-radius: 1rem;
+        background: black;
+        color: white;
+    
+        font-size: $inputFontSize;
+    
+        transition: $defaultTransition;
+    
+        &::placeholder {
+          font-size: $inputFontSize;
+        }
+        &:hover {
+          scale: $defaultScale;
+        }
+        &:focus {
+          scale: $defaultScale;
+        }
+      }
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        height: 5.5rem;
+    
+        padding: 1rem;
+    
+        outline: none;
+        border: 0.1rem solid white;
+        border-radius: 1rem;
+        background: black;
+        color: white;
+    
+        font-size: $inputFontSize;
+    
+        transition: $defaultTransition;
+    
+        &::placeholder {
+          font-size: $inputFontSize;
+        }
+        &:hover {
+          scale: $defaultScale;
+        }
+        &:focus {
+          scale: $defaultScale;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+
+      padding: 1rem;
+
+      border: 0.1rem solid white;
+      border-radius: 1rem;
+      background: white;
+      color: black;
+
+      font-size: $inputFontSize;
+
+      transition: $defaultTransition;
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+    
+          scale: $defaultScale;
+        }
+      }
+      &:active {
+        scale: 0.85;
+      }
+    }
+  }
+}

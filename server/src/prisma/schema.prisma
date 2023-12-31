@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// COMMANDS :
+// npm install prisma --save-dev
+// npx prisma
+// npm install @prisma/client
+
+// npx prisma migrate dev --name init
+// npx prisma migrate reset
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DOCKER_DB_URL")
+}
+
+model WaitList {
+  id            Int     @id @unique @default(autoincrement())
+  email         String  @unique
+  phone_number  String  @unique
+  name          String
+  comment       String
+  createdAt     DateTime @default(now())
+
+  @@map("wait_list")
+}

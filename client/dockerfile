@@ -1,0 +1,10 @@
+FROM node:18-alpine
+WORKDIR /beta-enroll-front/
+
+COPY public/ /beta-enroll-front/public
+COPY src/ /beta-enroll-front/src
+COPY package.json /beta-enroll-front/
+
+RUN npm install
+
+CMD ["npm", "start"]

@@ -1,0 +1,27 @@
+.PhoneInput {
+  box-sizing: border-box;
+  width: 100%;
+    
+  padding: 1rem;
+    
+  outline: none;
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+  background: black;
+  color: white;
+    
+  font-size: 1rem;
+    
+  transition: all 0.2s;
+}
+
+.PhoneInput:hover {
+  scale: 1.03;
+}
+
+.PhoneInput input {
+  border: none !important;
+}
+.PhoneInput input:hover {
+  scale: 1 !important;
+}
